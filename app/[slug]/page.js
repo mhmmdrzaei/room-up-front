@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { PortableText } from 'next-sanity';
+import { getsettings } from '@/sanity/sanity.utils';
 import { pageBySlugQuery } from '@/sanity/sanity.utils';
 import BodyText from '../components/BodyText';
 import CTAButton from '../components/CtaButton';
@@ -24,7 +25,7 @@ const componentMap = {
 
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } =  await params;
   const settings = await getsettings();
   const page = await pageBySlugQuery(slug);
 
@@ -66,7 +67,7 @@ export async function generateMetadata({ params }) {
 
 // This function handles fetching page content based on slug
 export default async function Page({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const pageData = await pageBySlugQuery(slug);
 
   if (!pageData) {
