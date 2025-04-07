@@ -123,7 +123,16 @@ export default {
           }
         ]
       },
+      {
+        name:'seoImg',
+        title: 'Seo Image',
+        type: 'image',
+        description: 'Image will be used if the speicifc pages do not have another image',
+        
+      }
     ],
+
+
     preview: {
       select: {
         title: 'siteTitle'

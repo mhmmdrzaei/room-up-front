@@ -1,3 +1,5 @@
+import VideoPlayer from "./VideoPlayer"
+
 export default function MembersContent({ posts }) {
     return (
       <div className="space-y-8">
@@ -20,14 +22,7 @@ export default function MembersContent({ posts }) {
                   )
                 } else if (block._type === 'video') {
                   return (
-                    <div key={i} className="my-4">
-                      <iframe
-                        src={block.url}
-                        className="w-full aspect-video"
-                        frameBorder="0"
-                        allowFullScreen
-                      />
-                    </div>
+                    <VideoPlayer link={block.url}/>
                   )
                 }
                 return null

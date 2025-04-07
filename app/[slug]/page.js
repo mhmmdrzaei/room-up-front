@@ -23,26 +23,28 @@ const componentMap = {
 };
 
 
-export async function generateMetadata(
-  { params }
-) {
+export async function generateMetadata({ params }) {
   const { slug } = params;
   const settings = await getsettings();
   const page = await pageBySlugQuery(slug);
+
+  const title = `${settings?.siteTitle || ''} | ${page?.title || ''}`;
   const description = page?.seo?.seoDescription || settings?.siteDescription || '';
 
-  return {
-    title: `${settings?.siteTitle || ''} | ${page?.title || ''}`,
+  const fallbackImage = settings?.seoImg?.asset?.url || '';
+  const seoImage = page?.seo?.seoImage?.asset?.url || fallbackImage;
 
+  return {
+    title,
     description,
     openGraph: {
-      title: settings?.siteTitle || '',
+      title,
       description,
-      url: page?.seo?.seoImage?.asset?.url || '',
+      url: seoImage,
       siteName: settings?.siteTitle || '',
       images: [
         {
-          url: page?.seo?.seoImage?.asset?.url || '',
+          url: seoImage,
           width: 1200,
           height: 628,
         },
@@ -50,8 +52,15 @@ export async function generateMetadata(
       locale: 'en_CA',
       type: 'website',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [seoImage],
+    },
   };
 }
+
   
   
 

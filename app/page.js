@@ -8,25 +8,35 @@ import Page from './[slug]/page';
 export async function generateMetadata() {
   const settings = await getsettings();
   const page = await pageBySlugQuery('home');
+  const title = `${settings?.siteTitle || ''} | ${page?.title || ''}`;
   const description = page?.seo?.seoDescription || settings?.siteDescription || '';
 
+  const fallbackImage = settings?.seoImg?.asset?.url || '';
+  const seoImage = page?.seo?.seoImage?.asset?.url || fallbackImage;
+
   return {
-    title: `${settings?.siteTitle || ''} | ${page?.title || ''}`,
+    title,
     description,
     openGraph: {
-      title: settings?.siteTitle || '',
+      title,
       description,
-      url: page?.seo?.seoImage?.asset?.url || '',
+      url: seoImage,
       siteName: settings?.siteTitle || '',
       images: [
         {
-          url: page?.seo?.seoImage?.asset?.url || '',
+          url: seoImage,
           width: 1200,
           height: 628,
         },
       ],
       locale: 'en_CA',
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [seoImage],
     },
   };
 }
