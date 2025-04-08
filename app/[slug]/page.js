@@ -80,9 +80,6 @@ export default async function Page({ params }) {
     <Layout>
     <div className="page-container">
 
-      {/* Page Title */}
-      <h1>{title}</h1>
-
       {pageBlocks?.map((block) => {
           const BlockComponent = componentMap[block._type];
           if (!BlockComponent) {

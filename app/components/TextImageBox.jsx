@@ -1,6 +1,5 @@
 import { PortableText } from '@portabletext/react';
-import CTAButton from './CTAButton'; // Importing CTAButton component
-
+import CTAButton from './CtaButton';
 export default function TextImageBox({ image, textContent = [], alignment = 'textImage' }) {
   return (
     <div style={{ display: 'flex', flexDirection: alignment === 'textImage' ? 'row' : 'row-reverse', alignItems: 'center' }}>

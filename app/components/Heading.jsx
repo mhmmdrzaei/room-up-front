@@ -1,6 +1,6 @@
 import { getRandomMember } from "@/sanity/sanity.utils";
 import Image from "next/image";
-import './Heading.css';
+import './Heading.scss';
 
 export default async function Heading({ headingText }) {
   const [randomMember] = await getRandomMember()
@@ -9,7 +9,7 @@ export default async function Heading({ headingText }) {
     <div className="heading-container">
       {headingText && 
         <div className="heading-text-container">
-          <h2 className="heading-text">{headingText}</h2>
+          <h1 className="heading-text">{headingText}</h1>
         </div>
       }
       <div className="">
