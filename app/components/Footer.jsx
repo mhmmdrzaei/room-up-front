@@ -10,7 +10,7 @@ export default  function Footer({settings}) {
         <Image 
           src={settings.footerLogo.asset.url} 
           alt="Footer Logo" 
-          width={100} 
+          width={300} 
           height={50} 
         />
       )}
