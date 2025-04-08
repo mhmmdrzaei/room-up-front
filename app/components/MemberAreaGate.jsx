@@ -6,7 +6,7 @@ import { useAuth } from './AuthContext'
 
 export default function MembersAreaGate({ posts, requiredPassword }) {
   const [enteredPassword, setEnteredPassword] = useState('')
-  const { login, user } = useAuth();
+  const { login, user, isLoading } = useAuth();
   const [error, setError] = useState('')
 
   const handleSubmit = (e) => {
@@ -18,6 +18,8 @@ export default function MembersAreaGate({ posts, requiredPassword }) {
       setError('Incorrect password')
     }
   }
+
+  if(isLoading) return <div className="text-center">Loading...</div>
 
   if (user) return <MembersContent posts={posts} />
 

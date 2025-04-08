@@ -8,11 +8,18 @@ const EXPIRES_IN_DAYS = 7;
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const authCookie = Cookies.get('auth');
-    if (authCookie) {
-      setUser(JSON.parse(authCookie));
+    try {
+      const token = Cookies.get('auth');
+      if (token) {
+        setUser(JSON.parse(token));
+      }
+    } catch (error) {
+      console.error('Auth cookie parse error:', error);
+    } finally {
+      setIsLoading(false);
     }
   }, []);
 
@@ -27,7 +34,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );
