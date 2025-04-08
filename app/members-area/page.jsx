@@ -40,13 +40,10 @@ export async function generateMetadata() {
 export default async function MembersAreaPage() {
   const posts = await getMemberArea()
   const password = await getPassword()
-  console.log(password)
 
   return (
     <Layout>
-            test
-            <MembersAreaGate posts={posts} requiredPassword={password.membersAreaPassword} />
-
+      <MembersAreaGate posts={posts} requiredPassword={password.membersAreaPassword} />
     </Layout>
 
   )

@@ -22,7 +22,9 @@ export default function MembersContent({ posts }) {
                   )
                 } else if (block._type === 'video') {
                   return (
-                    <VideoPlayer link={block.url}/>
+                    <div key={i}>
+                      <VideoPlayer link={block.url} />
+                    </div>
                   )
                 }
                 return null

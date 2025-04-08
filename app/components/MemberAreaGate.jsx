@@ -2,23 +2,24 @@
 
 import { useState } from 'react'
 import MembersContent from './MembersContent'
+import { useAuth } from './AuthContext'
 
 export default function MembersAreaGate({ posts, requiredPassword }) {
   const [enteredPassword, setEnteredPassword] = useState('')
-  const [authorized, setAuthorized] = useState(false)
+  const { login, user } = useAuth();
   const [error, setError] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (enteredPassword === requiredPassword) {
-      setAuthorized(true)
+      login({ user: true });
       setError('')
     } else {
       setError('Incorrect password')
     }
   }
 
-  if (authorized) return <MembersContent posts={posts} />
+  if (user) return <MembersContent posts={posts} />
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto text-center">
