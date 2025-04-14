@@ -21,9 +21,13 @@ export async function getsettings() {
       },
       alt
     },
+    "footerLogo": 
+    footerLogo {
+      asset->{url}
+    },
     socialLinks[] {
       socialLink,
-      socialIcon
+      icon
     },
     footerMenu[] {
       menuItemName,

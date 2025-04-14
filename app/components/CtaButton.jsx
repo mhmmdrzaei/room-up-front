@@ -9,6 +9,8 @@ export default function CTAButton({
   if (!buttonLabel || !buttonUrl) return null;
 
   return (
+    <div className="container">
+
     <div className="button-container" >
       <a 
         href={buttonUrl} 
@@ -27,6 +29,7 @@ export default function CTAButton({
 
         <img src="assets/arrow.png" alt="arrow" width={20} height={15}/>
       </a>
+    </div>
     </div>
   );
 }

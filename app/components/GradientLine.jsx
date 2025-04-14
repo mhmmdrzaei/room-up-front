@@ -8,15 +8,18 @@ const GradientLine = ({ lineColor, align }) => {
 
   // Set the gradient color based on the selected lineColor
   const gradientColors = {
-    black: 'linear-gradient(to right, #000, #555)',
-    red: 'linear-gradient(to right, #f00, #ff7f7f)',
+    black: 'linear-gradient(90deg, #424242 0%, #ffffff 100%)',
+    blackAlt: 'linear-gradient(270deg, #424242 0%, #ffffff 100%)',
   };
+
+  // Choose the appropriate gradient based on alignment
 
   // Set the gradient color based on the lineColor value
   const gradientStyle = {
-    background: gradientColors[lineColor] || gradientColors.black,
+    background:`${align === 'right'? gradientColors.blackAlt: gradientColors.black } ` ,
     height: '4px',
-    width: '100%',
+    width: '80%',
+    marginBottom: '25px',
     ...alignStyles, // Apply the alignment styles
   };
 

@@ -1,6 +1,6 @@
 export default {
     name: 'heading',
-    title: 'Heading',
+    title: 'Home Page Heading Box',
     type: 'object',
     fields: [
       {

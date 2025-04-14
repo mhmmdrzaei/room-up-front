@@ -1,4 +1,8 @@
 import Image from 'next/image';
+import './Footer.scss'
+import { PortableText } from 'next-sanity';
+import React from 'react';
+
 
 
 export default  function Footer({settings}) {
@@ -6,6 +10,7 @@ export default  function Footer({settings}) {
 
   return (
     <footer>
+    <div className="container">
       {settings?.footerLogo && (
         <Image 
           src={settings.footerLogo.asset.url} 
@@ -26,7 +31,12 @@ export default  function Footer({settings}) {
       <div>
         {settings?.socialLinks?.map((social, index) => (
           <a key={index} href={social.socialLink} target="_blank" rel="noopener noreferrer">
-            {social.icon}
+               <div
+      dangerouslySetInnerHTML={{ __html:  
+        social.icon.svg
+       }} // Inject the raw SVG string
+    />
+    
           </a>
         ))}
       </div>
@@ -35,6 +45,7 @@ export default  function Footer({settings}) {
           <a href={`mailto:${settings.email.emailUrl}`}>{settings.email.emailLabel}</a>
         </p>
       )}
+      </div>
     </footer>
   );
 }

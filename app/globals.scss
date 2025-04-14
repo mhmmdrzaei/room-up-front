@@ -25,11 +25,7 @@ $greyGradient:linear-gradient(270deg, #424242 0%, #F1F1F1 100%);
   }
 } */
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding:0 20px;
-}
+
 @mixin fontSize($sizeValue){
   font-size: $sizeValue * 1px;
   font-size: calc($sizeValue/10) * 1rem;
@@ -38,6 +34,10 @@ $greyGradient:linear-gradient(270deg, #424242 0%, #F1F1F1 100%);
 display: flex;
 flex-flow: row wrap;
 }
+.pageContainer {
+  @extend .flex;
+  
+}
 
 
 
@@ -45,14 +45,14 @@ flex-flow: row wrap;
 h1, h2, h3, h4 {
   font-family: 'DM Sans', sans-serif;
   font-weight: 900;
+  
 }
 
 h1 { 
-
   @include fontSize(30);
 }
 h2 {
-  @include fontSize(18);color: #000;
+  @include fontSize(18);
 }
 h3 {
   @include fontSize(15);

@@ -1,22 +1,27 @@
 @use '../globals.scss';
 .container-blocks {
     max-width: 1400px;
+    width: 100%;
 }
 .body-text {
-    margin: 25px auto;
-    padding:0 20px;
+    margin: 0 auto;
     position: relative;
     @extend .container-blocks;
+    padding: 25px 20px;
+    
+
+}
+.black-back {
+    padding: 25px 25px;
+    border-radius: 7px;
 }
 .heading-level-text {
     @extend .container-blocks;
     margin: 25px auto;
-    padding:0 20px;
 
 }
 .button-container {
     @extend .container-blocks;
-    padding: 0 20px;
     margin: 25px auto;
     a {
         display: flex;
@@ -29,4 +34,14 @@
             padding: 0 10px;
         }
     }
+}
+.text-image-box {
+    @extend .container-blocks;
+    padding: 0 20px;
+    margin: 25px auto;
+    @extend .flex;
+    align-items: center;
+        .container {
+            padding: 0;
+        }
 }

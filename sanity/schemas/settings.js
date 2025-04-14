@@ -49,7 +49,7 @@ export default {
       },
       {
         name: 'footerLogo',
-        title: 'icon logo',
+        title: 'Icon Logo',
         type:'image',
       },
       {
@@ -66,20 +66,15 @@ export default {
                 type: 'string'
               },
               {
-                name: "icon",
                 title: "Icon",
-                type: "string",
+                name: "icon",
+                type: "iconPicker",
                 options: {
-                  list: [
-                    { title: "Facebook", value: "faFacebook" },
-                    { title: "Twitter", value: "faTwitter" },
-                    { title: "Instagram", value: "faInstagram" },
-                    { title: "LinkedIn", value: "faLinkedin" },
-                    { title: "YouTube", value: "faYoutube" },
-                    { title: "Email", value: "faEmail" },
-                  ],
-                },
-              },
+                  providers: [ "fa"],
+                  outputFormat: 'react',
+                  storeSvg: true
+              }
+            }
             ]
           }
         ]

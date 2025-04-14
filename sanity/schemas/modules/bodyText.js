@@ -9,9 +9,9 @@ export default {
         type: 'string',
         options: {
           list: [
-            { title: '25%', value: '25' },
-            { title: '50%', value: '50' },
-            { title: '75%', value: '75' },
+            { title: '25%', value: '24' },
+            { title: '50%', value: '49' },
+            { title: '75%', value: '74' },
             { title: '100%', value: '100' }
           ],
           layout: 'dropdown'
