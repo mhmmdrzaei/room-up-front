@@ -1,0 +1,32 @@
+@use '../globals.scss';
+.container-blocks {
+    max-width: 1400px;
+}
+.body-text {
+    margin: 25px auto;
+    padding:0 20px;
+    position: relative;
+    @extend .container-blocks;
+}
+.heading-level-text {
+    @extend .container-blocks;
+    margin: 25px auto;
+    padding:0 20px;
+
+}
+.button-container {
+    @extend .container-blocks;
+    padding: 0 20px;
+    margin: 25px auto;
+    a {
+        display: flex;
+        padding: 10px 20px;
+        border-radius: 7px;
+        text-decoration: none;
+        width: fit-content;
+        align-items: center;
+        span {
+            padding: 0 10px;
+        }
+    }
+}

@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import { PortableText } from 'next-sanity';
 import { getsettings } from '@/sanity/sanity.utils';
 import { pageBySlugQuery } from '@/sanity/sanity.utils';
 import BodyText from '../components/BodyText';

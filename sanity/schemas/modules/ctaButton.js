@@ -26,7 +26,7 @@ export default {
         options: {
           list: [
             { title: 'Black', value: 'black' },
-            { title: 'Red', value: 'red' }
+            { title: 'Red', value: '#831308' }
           ],
           layout: 'dropdown'
         },

@@ -91,7 +91,8 @@ export async function pageBySlugQuery(slug) {
             buttonLabel,
             buttonUrl,
             openInNewWindow,
-            buttonColor
+            buttonColor,
+            buttonAlignment
           },
           _type == "membersCarousel" => {},
           _type == "gradientLine" => {

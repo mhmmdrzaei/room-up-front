@@ -8,11 +8,9 @@ export default async function Heading({ headingText }) {
   return (
     <div className="heading-container">
       {headingText && 
-        <div className="heading-text-container">
           <h1 className="heading-text">{headingText}</h1>
-        </div>
       }
-      <div className="">
+      <div className="member-highlight">
           <Image src={randomMember.image.asset.url} alt={`${randomMember.image.alt? randomMember.image.alt: 'Room Up Front Member portfolio piece'}`}
           width={800} height={800}/>
           <div className="heading-image-text-box">

@@ -1,0 +1,16 @@
+@use '../globals.scss';
+$greyDark: #424242;
+.header-container {
+    width: 100%;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: flex-end;
+.heading-nav {
+    width: 55%;
+    justify-content: space-between;
+    text-transform: uppercase;
+    color: $greyDark;
+    @extend h4
+
+}
+}

@@ -1,22 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import './Header.scss';
 
 
 export default function Header({settings}) {
 
 
   return (
-    <header className='flex flex-wrap w-full'>
+    <header className='header-container container flex'>
 
-      <nav>
-        <ul className='flex flex-wrap'>
+        <ul className='heading-nav flex flex-wrap'>
           {settings?.headingMenu?.map((item, index) => (
             <li key={index}>
               <a href={item.menuItemUrl}>{item.menuItemName}</a>
             </li>
           ))}
         </ul>
-      </nav>
       {settings?.headingLogo && (
         <Link href={"/"}>        
         <Image 
