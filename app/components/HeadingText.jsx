@@ -5,12 +5,12 @@ export default function HeadingText({ headingLevel = 'h1', width = '100', textAl
   const HeadingTag = headingLevel;
 
   return (
-    <div className="container">
+    <div className="container-blocks container">
     <div className="heading-level-text" style={{ width: `${width}%`, textAlign, margin: `${
           textAlign === 'left'
-            ? '0'
+            ? '35px 0 0'
             : textAlign === 'center'
-            ? '0 auto'
+            ? '35px auto 0'
             : '0 0 0 auto'
         }` }}>
       <HeadingTag>{text}</HeadingTag>

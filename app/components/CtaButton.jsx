@@ -9,7 +9,7 @@ export default function CTAButton({
   if (!buttonLabel || !buttonUrl) return null;
 
   return (
-    <div className="container">
+    <div className="container container-blocks">
 
     <div className="button-container" >
       <a 

@@ -21,7 +21,7 @@ export default function Header({settings}) {
         <Image 
         src={settings.headingLogo.asset.url} 
         alt="Logo" 
-        width={400} 
+        width={500} 
         height={300} 
       />
       </Link>

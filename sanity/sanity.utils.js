@@ -158,28 +158,42 @@ export async function getMembers(){
 }
 
 
-// Random Members Query for Members Carousel (3 random members)
-export async function getRandomMembers(){
-  return createClient(clientConfig).fetch(
+// Random Members Query for Members Carousel (fetch 20 members, select 3 randomly)
+export async function getRandomMembers() {
+  const members = await createClient(clientConfig).fetch(
     groq`
-    *[_type == "member"] | order((_createdAt)) [0...10] {
-      name,
-      slug,
-      location,
-      website,
-      images[0] {
-        asset->{
-          url,
-          metadata {
-            dimensions
-          }
-        },
-        alt
+      *[_type == "member"] {
+        name,
+        slug,
+        location,
+        website,
+        email,
+        images[0] {
+          asset->{
+            url,
+          },
+          alt
+        }
       }
-    }
-  `
-  )
+    `
+  );
+
+  // Randomly select 3 members from the fetched list
+  const randomMembers = getRandomItems(members, 3);
+  return randomMembers;
 }
+
+// Helper function to randomly select N items from an array
+function getRandomItems(arr, num) {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled.slice(0, num);
+}
+
+
 
 export async function getRandomMember() {
   return createClient(clientConfig).fetch(

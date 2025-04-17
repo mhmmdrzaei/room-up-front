@@ -45,3 +45,37 @@
             padding: 0;
         }
 }
+.carousel-container {
+    margin-bottom: 35px;
+    h1 {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 35px;
+    }
+
+    @extend .container-blocks;
+    @extend .flex;
+    justify-content: space-between;
+    .member-card {
+        width: 32%;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background: grey;
+        h4 {
+            margin-bottom: 5px;
+        }
+        figure {
+            margin-bottom: 5px;
+            img {
+                max-height: 254px;
+                width: auto;
+                margin: 0 auto;
+            }
+        }
+        p, a {
+            width: 100%;
+            display: block;
+            margin-bottom: 3px;
+        }
+    }
+}

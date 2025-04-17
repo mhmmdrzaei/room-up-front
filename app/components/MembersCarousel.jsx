@@ -1,6 +1,5 @@
 import { getRandomMembers } from "@/sanity/sanity.utils";
-
-import Image from 'next/image';
+import Image from "next/image";
 
 export default async function MembersCarousel() {
   const members = await getRandomMembers();
@@ -10,22 +9,49 @@ export default async function MembersCarousel() {
   }
 
   return (
-      <div className="carousel-container">
-        {members.map((member) => (
-          <div key={member.slug.current} className="member-card">
+    <div className="carousel-container container">
+      <h1>Members</h1>
+      {members.map((member) => (
+        <div key={member.slug.current} className="member-card">
+          {member.name && <h4>{member.name}</h4>}
+          {member.images ? (
+            <figure>
+              <Image
+                src={member.images?.asset?.url}
+                alt={member.images?.alt || "Member Image"}
+                width={500}
+                height={500}
+              />
+            </figure>
+          ) : (
             <Image
-              src={member.images?.asset?.url || '/placeholder.jpg'}
-              alt={member.images?.alt || 'Member Image'}
-              width={200}
-              height={200}
+              src="/assets/placeholder.png"
+              alt="Member Image"
+              width={500}
+              height={500}
             />
-            <h3>{member.name}</h3>
-            <p>{member.location}</p>
+          )}
+
+          {/* Conditional rendering for Location */}
+          {member.location && <p>{member.location}</p>}
+
+          {/* Conditional rendering for Website */}
+          {member.website && (
             <a href={member.website} target="_blank" rel="noopener noreferrer">
-            {member.website} 
+              {member.website}
             </a>
-          </div>
-        ))}
-      </div>
+          )}
+          {member.email && (
+            <a
+              href={`mailto:${member.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
   );
 }

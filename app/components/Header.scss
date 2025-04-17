@@ -2,11 +2,12 @@
 $greyDark: #424242;
 .header-container {
     width: 100%;
-    margin-top: 15px;
+    margin: 15px auto 0;
     justify-content: space-between;
     align-items: flex-end;
+    max-width: 1400px;
 .heading-nav {
-    width: 55%;
+    width: 50%;
     justify-content: space-between;
     text-transform: uppercase;
     color: $greyDark;
