@@ -34,14 +34,20 @@ $greyGradient:linear-gradient(270deg, #424242 0%, #F1F1F1 100%);
 display: flex;
 flex-flow: row wrap;
 }
-.pageContainer {
+.page-container {
   @extend .flex;
-  max-width: 1400px;
-  margin: 0 auto;
   
 }
 .container {
   padding: 0 20px;
+}
+main {
+  margin: 30px 0;
+  min-height: calc(100dvh - 360px);
+
+}
+img {
+  height: auto;
 }
 
 
@@ -64,6 +70,11 @@ h3 {
 h4 {
   color: $greyDark;
   text-transform: uppercase;
+  @include fontSize(14);
+}
+p {
+  @include fontSize(9);
+  margin-bottom: 5px
 }
 .subHead {
   @include fontSize(8);
@@ -75,4 +86,5 @@ body {
   font-family: 'Figtree', sans-serif;
   font-weight: 300;
   border-top: 7px solid $red;
+
 }

@@ -103,6 +103,18 @@ export async function pageBySlugQuery(slug) {
             lineColor,
             align
           },
+          _type == "headingImage" => {
+            imageHeading {
+            asset-> {
+            url,
+
+            },
+            alt,
+            caption
+            
+            },
+            headingText
+            },
           _type == "textImageBox" => {
             image {
               asset-> {
@@ -131,13 +143,14 @@ export async function pageBySlugQuery(slug) {
 }
 
 
-export async function getMembers(){
-  return createClient(clientConfig).fetch(
+export async function getMembers() {
+  const members = await createClient(clientConfig).fetch(
     groq`
     *[_type == "member"] {
       name,
+      _id,
       slug,
-       images[] {
+      images[] {
         asset->{
           url,
           metadata {
@@ -150,12 +163,27 @@ export async function getMembers(){
       email,
       location,
       website,
-       bio[] {
+      bio[] {
         ...
       }
     }`
-  )
+  );
+
+  // Sort the members by last name (last word of the name)
+  members.sort((a, b) => {
+    // Get last names (split name and get last word)
+    const lastNameA = a.name.split(' ').pop().toLowerCase();
+    const lastNameB = b.name.split(' ').pop().toLowerCase();
+    
+    // Compare last names alphabetically
+    if (lastNameA < lastNameB) return -1;
+    if (lastNameA > lastNameB) return 1;
+    return 0;
+  });
+
+  return members;
 }
+
 
 
 // Random Members Query for Members Carousel (fetch 20 members, select 3 randomly)
@@ -164,6 +192,7 @@ export async function getRandomMembers() {
     groq`
       *[_type == "member"] {
         name,
+        _id,
         slug,
         location,
         website,
@@ -194,28 +223,13 @@ function getRandomItems(arr, num) {
 }
 
 
-
-export async function getRandomMember() {
-  return createClient(clientConfig).fetch(
-    groq`
-*[_type == "member"] | order((_createdAt)) [0...1] {
-      name,
-      slug,
-      location,
-      website,
- "image": images[0]{asset->{url}, alt, caption}
-    }
-    `
-  )
-}
-
-
 // Mentor and Staff Query
 export async function getMentors() {
-  return createClient(clientConfig).fetch(
+  const mentors = await createClient(clientConfig).fetch(
     groq`
       *[_type == "mentorStaff" && "mentor" in role] {
       name,
+      _id,
       slug {
         current
       },
@@ -232,12 +246,26 @@ export async function getMentors() {
     }
   `
   )
+  mentors.sort((a, b) => {
+    // Get last names (split name and get last word)
+    const lastNameA = a.name.split(' ').pop().toLowerCase();
+    const lastNameB = b.name.split(' ').pop().toLowerCase();
+    
+    // Compare last names alphabetically
+    if (lastNameA < lastNameB) return -1;
+    if (lastNameA > lastNameB) return 1;
+    return 0;
+  });
+
+  return mentors;
+
 }
 export async function getStaff() {
-  return createClient(clientConfig).fetch(
+  const staff =  await createClient(clientConfig).fetch(
     groq`
      *[_type == "mentorStaff" && "staff" in role] {
       name,
+      _id,
       slug {
         current
       },
@@ -254,6 +282,18 @@ export async function getStaff() {
     }
   `
   )
+  staff.sort((a, b) => {
+    // Get last names (split name and get last word)
+    const lastNameA = a.name.split(' ').pop().toLowerCase();
+    const lastNameB = b.name.split(' ').pop().toLowerCase();
+    
+    // Compare last names alphabetically
+    if (lastNameA < lastNameB) return -1;
+    if (lastNameA > lastNameB) return 1;
+    return 0;
+  });
+
+  return staff;
 }
 
 export async function getMemberArea() {

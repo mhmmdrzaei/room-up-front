@@ -1,5 +1,5 @@
 import { getMembers, getStaff, getMentors, getsettings } from '@/sanity/sanity.utils';
-import MembersTabs from '../components/MembersTab';
+import MembersTabs from '../components/MembersTabs';
 import Layout from '../components/Layout';
 
 export async function generateMetadata() {
@@ -43,7 +43,7 @@ export default async function MembersPage() {
 
   return (
     <Layout>
-      <h1>Meet Our Team</h1>
+      
       <MembersTabs members={members} mentors={mentors} staff={staff} />
     </Layout>
   );

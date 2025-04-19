@@ -25,7 +25,7 @@ export default function MembersAreaGate({ posts, requiredPassword }) {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto text-center">
-      <h1 className="text-2xl mb-4">Enter Members Area</h1>
+      <h2 className="text-2xl mb-4">Enter Members Area</h2>
       <input
         type="password"
         value={enteredPassword}

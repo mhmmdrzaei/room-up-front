@@ -2,6 +2,7 @@
 .container-blocks {
     max-width: 1400px;
     width: 100%;
+    margin: 0 auto;
 }
 .body-text {
     margin: 0 auto;
@@ -14,6 +15,8 @@
 .black-back {
     padding: 25px 25px;
     border-radius: 7px;
+    background: black;
+    color: white;
 }
 .heading-level-text {
     @extend .container-blocks;
@@ -46,6 +49,16 @@
         }
 }
 .carousel-container {
+    // margin: 3.25em auto 7.25em;
+    .membersBackground {
+        clip-path: polygon(0% 0, 100% 10%, 100% 100%, 0 90%);
+        left: 0;
+        position: absolute;
+         z-index: -1;
+         width: 100%;
+          height: 100dvh;
+        background-color: #f1f1f1;
+    }
     margin-bottom: 35px;
     h1 {
         text-align: center;
@@ -60,7 +73,7 @@
         width: 32%;
         padding: 10px 15px;
         border-radius: 5px;
-        background: grey;
+        background: rgb(255, 255, 255);
         h4 {
             margin-bottom: 5px;
         }
@@ -77,5 +90,69 @@
             display: block;
             margin-bottom: 3px;
         }
+    }
+}
+.post-each {
+    background: #E7E7E7;
+    border: 1px solid #E7E7E7;
+    h3{
+        padding: 10px 15px; 
+    }
+    margin-bottom: 30px;
+    border-radius: 7px;
+}
+.content-main {
+    background: white;
+    padding: 10px 15px;
+    .videoContainer {
+        margin: 10px auto;
+        div {
+            margin: 0 auto;
+        }
+    }
+    img {
+        max-height: 700px;
+        margin: 0 auto;
+        width: auto;
+    }
+}
+.heading-Image {
+    position: relative;
+    @extend .container-blocks;
+    padding-bottom: 82dvh;
+    .headingImgBG {
+        position: absolute;
+        left: -20px;
+        top: -20px;
+        width: 50%;
+        height: 50px;
+        background: #E7E7E7;
+        z-index: -1;
+
+    }
+    p {
+        width: fit-content;
+        margin-top: 5px;
+        max-width: 400px;
+        margin-right: 10px;
+        position: absolute;
+        bottom: -10px;
+    }
+    .headingText {
+        background: #E7E7E7;
+        width: fit-content;
+        min-width: 300px;
+        padding: 20px;
+        right: -20px;
+        position: absolute;
+        bottom: 0px;
+    }
+    img {
+        width: 100%;
+        position: absolute;
+        height: 80dvh;
+        left: 0;
+        object-fit: cover;
+       
     }
 }

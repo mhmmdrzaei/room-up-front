@@ -31,7 +31,10 @@ export default {
           { type: 'ctaButton' },
           { type: 'membersCarousel' },
           { type: 'gradientLine' },
-          { type: 'textImageBox' }
+          { type: 'textImageBox' },
+          {
+            type: 'headingImage'
+          }
         ]
       },
       {

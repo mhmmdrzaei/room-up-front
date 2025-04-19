@@ -1,15 +1,16 @@
-import { getRandomMember, getRandomMembers } from "@/sanity/sanity.utils";
+import { getRandomMembers } from "@/sanity/sanity.utils";
 import Image from "next/image";
 import './Heading.scss';
 
 export default async function Heading({ headingText }) {
-  const [randomMember] = await getRandomMember()
+
   const randomMemb = await getRandomMembers()
   const randomMemberr = randomMemb[0]
   console.log(randomMemberr)
 
   return (
     <div className="heading-container">
+      <div className="background-headingBox"></div>
       {headingText && 
           <h1 className="heading-text">{headingText}</h1>
       }
@@ -27,12 +28,13 @@ export default async function Heading({ headingText }) {
           />
 
         }
-
-      </div>
       <div className="heading-image-text-box">
               <p className="heading-image-name">{randomMemberr.name}</p>
               <p className="heading-image-location">{randomMemberr.location}</p>
       </div>
+
+      </div>
+
     </div>
 
 

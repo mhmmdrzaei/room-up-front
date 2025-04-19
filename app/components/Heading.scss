@@ -4,11 +4,23 @@
   @extend .flex;
   justify-content: space-between;
   align-items: center;
-  margin: 6.25rem auto;
+  margin: 7.25rem auto;
   padding:0 20px;
   max-width: 1400px;
   width: 100%;
 
+}
+.background-headingBox {
+  background: url('/assets/heading-bg.svg');
+  background-repeat: no-repeat;
+  background-position: left;
+  left: 0;
+  background-size: contain;
+  position: absolute;
+  z-index: -1;
+  
+  width: 100%;
+  height: 90dvh;
 }
 
 .heading-text {
@@ -20,8 +32,9 @@
 .heading-image-text-box {
   @extend .flex;
   width: 100%;
-  position: relative;
-  top: 50px;
+  right:4.5em;
+  position: absolute;
+  // top: 50px;
   justify-content: flex-end;
   align-items: center;
 }
@@ -29,10 +42,10 @@
   position: absolute;
   right: 0;
   width: auto;
-  max-height: 500px; /* or whatever you need */
+  max-height: 550px; /* or whatever you need */
   img {
-    max-height: 500px;
-    max-width: 600px;
+    max-height: 550px;
+    max-width: 800px;
     width: auto;
     
   }
@@ -41,6 +54,7 @@
 .heading-image-name {
   @extend h4;
   margin-right: 20px;
+  
 }
 .heading-image-location {
   @extend .subHead;

@@ -19,7 +19,7 @@ const GradientLine = ({ lineColor, align }) => {
     background:`${align === 'right'? gradientColors.blackAlt: gradientColors.black } ` ,
     height: '4px',
     width: '80%',
-    margin: '35px',
+    margin: `${align === 'left'? '35px 0':'35px auto 35px 0'}`,
     ...alignStyles, // Apply the alignment styles
   };
 

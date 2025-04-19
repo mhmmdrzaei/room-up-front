@@ -16,6 +16,7 @@ import membersCarousel from './modules/membersCarousel'
 import gradientLine from './modules/gradientLine'
 import textImageBox from './modules/textImageBox'
 import seo from './seo'
+import headingImage from './modules/headingImage'
 
 
 
@@ -38,5 +39,6 @@ export const schemaTypes = [
       gradientLine,
       textImageBox,
       seo,
-      memberAreaPosts
+      memberAreaPosts,
+      headingImage
 ]

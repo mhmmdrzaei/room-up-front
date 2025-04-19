@@ -3,12 +3,12 @@ import './globals.scss'
 import { DM_Sans, Figtree } from 'next/font/google'
 
 const dmSans = DM_Sans({
-  weight:["300", "900"],
+  weight:["300","500", "900"],
   subsets: ['latin']
 })
 const figTree = Figtree({
   style: ['normal', 'italic'],
-  weight: ["300"],
+  weight: ["300","400"],
   subsets: ['latin']
 })
 

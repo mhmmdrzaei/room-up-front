@@ -10,6 +10,7 @@ export default async function MembersCarousel() {
 
   return (
     <div className="carousel-container container">
+      <div className="membersBackground"></div>
       <h1>Members</h1>
       {members.map((member) => (
         <div key={member.slug.current} className="member-card">

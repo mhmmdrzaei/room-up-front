@@ -1,28 +1,32 @@
 import VideoPlayer from "./VideoPlayer"
+import './Blocks.scss';
+import Image from "next/image";
 
 export default function MembersContent({ posts }) {
     return (
-      <div className="space-y-8">
+      <div className="container container-blocks">
         {posts.map((post) => (
-          <div key={post._id} className="border-b pb-6">
-            <h2 className="text-xl font-bold mb-2">{post.title}</h2>
-            <div>
-              {/* Simple rendering – you can use PortableText if you want full block support */}
+          <div key={post._id} className="post-each">
+            <h3 className="">{post.title}</h3>
+            <div className="content-main">
               {post.content?.map((block, i) => {
                 if (block._type === 'block') {
                   return <p key={i}>{block.children?.map((child) => child.text).join('')}</p>
                 } else if (block._type === 'image') {
                   return (
-                    <img
+                    <Image
+                      width={900}
+                      height={900}
                       key={i}
                       src={block.asset?.url}
                       alt={block.alt || ''}
-                      className="my-4 rounded"
+                      loading="lazy"
+                    
                     />
                   )
                 } else if (block._type === 'video') {
                   return (
-                    <div key={i}>
+                    <div key={i} className="videoContainer">
                       <VideoPlayer link={block.url} />
                     </div>
                   )

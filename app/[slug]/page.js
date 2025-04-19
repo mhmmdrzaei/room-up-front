@@ -9,6 +9,7 @@ import MembersCarousel from '../components/MembersCarousel';
 import TextImageBox from '../components/TextImageBox';
 import HeadingText from '../components/HeadingText';
 import Layout from '../components/Layout';
+import HeadingImage from '../components/HeadingImage';
 
 const componentMap = {
   heading: Heading,
@@ -19,6 +20,7 @@ const componentMap = {
   membersCarousel: MembersCarousel,
   gradientLine: GradientLine,
   textImageBox: TextImageBox,
+  headingImage: HeadingImage
 };
 
 
@@ -76,7 +78,7 @@ export default async function Page({ params }) {
 
   return (
     <Layout>
-    <div className="pageContainer">
+    <div className="page-container">
       {pageBlocks?.map((block) => {
           const BlockComponent = componentMap[block._type];
           if (!BlockComponent) {

@@ -3,4 +3,35 @@
 footer {
     background-color: black;
     color: white;
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+.footer-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px 20px 30px;
+    @extend .flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+nav {
+   text-align: right; 
+   min-width: 300px;
+}
+.footer-center {
+    min-width: 300px;
+    text-align: center
+}
+.social-links {
+    @extend .flex;
+    margin-bottom: 5px;
+}
+.footer-center {
+    min-width: 300px;
+    img {
+        max-width: 110px;
+        margin: 0 auto;
+    }
 }

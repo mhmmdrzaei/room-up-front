@@ -1,0 +1,145 @@
+@use '../globals.scss';
+$red: #831308;
+.members-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.search-console {
+    @extend .flex;
+    justify-content: space-between;
+    margin: 50px auto;
+    width: 100%;
+    align-items: center;
+    .search-bar {
+        width: 49%;
+        display: flex;
+        align-items: center;
+        input {
+            border: 3px solid $red;
+            padding: 5px 7px;
+            margin-right: 5px;
+            background: white;
+        }
+    }
+    .search-tabs {
+        display: flex;
+        width: 30%;
+        justify-content: space-between;
+      
+       button {
+        @extend h4;
+       }
+       .activeTab {
+        text-decoration: underline;
+       }
+    }
+}
+.carousel-slide {
+    margin: 0 10px;
+}
+.member-card {
+    margin: 100px auto;
+}
+.member-images {
+     
+        img {
+            height: 600px;
+            width: auto;
+        }
+    
+}
+
+.image-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .carousel-image {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+  .slick-next, .slick-prev {
+    z-index: 10;
+    
+  }
+  .slick-next:before, .slick-prev:before {
+    font-size: 40px;
+    opacity: 1;
+  }
+  .slick-next {
+    right: 2%;
+  }
+  .slick-prev {
+    left: .5%;
+  }
+  .details-header {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    border-radius: 7px;
+    background: white;
+    @extend .flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    border-bottom: 7px solid $red;
+    .member-location{
+        max-width: 300px;
+    }
+  }
+.memberPageBG {
+    clip-path: polygon(50% 30%, 100% 100%, 50% 100%, 0% 30%);
+    position: fixed;
+    top: -80vh;
+    left: -10vh;
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 180vh;
+    z-index: -1;
+}
+  .staff {
+    @extend .flex;
+    .staffPageBG {
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);        position: fixed;
+        top: 10vh;
+        left: 0;
+        background-color: #f1f1f1;
+        width: 130%;
+        height: 120vh;
+        z-index: -1;
+    }
+
+    .staff-card {
+        width: calc(33% - 12.6px);
+        margin-right: 25px;
+        background: white;
+        border-radius: 7px;
+        margin-bottom: 30px;
+        h4 {
+            padding: 0 10px;
+        }
+        .staff-details {
+            border-top: 7px solid $red;
+            padding: 20px 10px;
+            .person-position {
+            
+                margin-bottom: 10px;
+                @extend h4;
+                font-weight: 500;
+            }
+            .staff-site{
+                margin-top: 10px;
+                display: block;
+                font-weight: 400;
+            }
+        }
+
+    }
+    .staff-card:nth-child(3n) {
+        margin-right: 0;
+    }
+
+}

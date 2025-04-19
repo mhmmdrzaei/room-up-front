@@ -21,9 +21,11 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-player": "^2.16.0",
+    "react-slick": "^0.30.3",
     "sanity-plugin-icon-picker": "^4.0.0",
     "sass": "^1.86.3",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
