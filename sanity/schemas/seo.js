@@ -18,6 +18,7 @@ export default {
         name: 'seoImage',
         title: 'SEO Image',
         type: 'image',
+        descrption: 'should be 628x1200 min',
         options: {
           hotspot: true
         }

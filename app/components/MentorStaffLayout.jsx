@@ -3,9 +3,9 @@ import { PortableText } from "next-sanity";
 
 export default function MentorsStaffLayout({ people, type }) {
   return (
-    <div className="staff">
+    <div className="staffContainer">
       <div className="staffPageBG"></div>
-
+      <div className="staff">
       {people.map((person) => (
         <div key={person._id} className="staff-card">
           <h4>{person.name}</h4>
@@ -32,6 +32,7 @@ export default function MentorsStaffLayout({ people, type }) {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 }

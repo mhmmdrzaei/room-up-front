@@ -100,20 +100,21 @@ $red: #831308;
     height: 180vh;
     z-index: -1;
 }
+.staffPageBG {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);        position: fixed;
+    top: 10vh;
+    left: 0;
+    background-color: #f1f1f1;
+    width: 130%;
+    height: 120vh;
+    z-index: -1;
+}
   .staff {
     @extend .flex;
-    .staffPageBG {
-        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);        position: fixed;
-        top: 10vh;
-        left: 0;
-        background-color: #f1f1f1;
-        width: 130%;
-        height: 120vh;
-        z-index: -1;
-    }
+
 
     .staff-card {
-        width: calc(33% - 12.6px);
+        width: calc(33% - 16.6px);
         margin-right: 25px;
         background: white;
         border-radius: 7px;

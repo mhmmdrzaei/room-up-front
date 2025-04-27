@@ -33,7 +33,7 @@ export default {
       },
       prepare({ media, alignment }) {
         return {
-          title: 'Text Image Box',
+          title: 'Heading Image Box',
           media: media
         }
       }

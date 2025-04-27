@@ -122,7 +122,7 @@ export default {
         name:'seoImg',
         title: 'Seo Image',
         type: 'image',
-        description: 'Image will be used if the speicifc pages do not have another image',
+        description: 'Image will be used if the speicifc pages do not have another image should be 628x1200 min',
         
       }
     ],
