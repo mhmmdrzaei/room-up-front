@@ -1,4 +1,3 @@
-"use client"
 import { getRandomMembers } from "@/sanity/sanity.utils";
 import Image from "next/image";
 import './Heading.scss';
@@ -8,7 +7,6 @@ export default async function Heading({ headingText }) {
 
   const randomMemb = await getRandomMembers()
   const randomMemberr = randomMemb[0]
-  console.log(randomMemberr)
 
   return (
     <div className="heading-container">

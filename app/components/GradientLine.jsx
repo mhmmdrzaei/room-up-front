@@ -1,8 +1,8 @@
-'use client';
+
 
 import React from 'react';
 
-const GradientLine = ({ lineColor, align }) => {
+const GradientLine = ({align }) => {
   // Set the alignment styles
   const alignStyles = align === 'right' ? { marginLeft: 'auto', marginRight: 0 } : {};
 

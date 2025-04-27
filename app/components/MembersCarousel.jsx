@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default async function MembersCarousel() {
   const members = await getRandomMembers();
-
+ 
   if (!members.length) {
     return <div>No members found</div>;
   }

@@ -2,7 +2,6 @@
 import './MembersTabs'
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { PortableText } from 'next-sanity';
 import MembersLayout from './MembersLayout';
 import MentorsStaffLayout from './MentorStaffLayout';
 import './MembersTabs.scss'
