@@ -1,6 +1,7 @@
 import './globals.scss'
 
 import { DM_Sans, Figtree } from 'next/font/google'
+export const dynamic = 'force-dynamic'
 
 const dmSans = DM_Sans({
   weight:["300","500", "900"],
