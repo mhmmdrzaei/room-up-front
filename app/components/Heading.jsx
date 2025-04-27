@@ -1,7 +1,8 @@
+"use client"
 import { getRandomMembers } from "@/sanity/sanity.utils";
 import Image from "next/image";
 import './Heading.scss';
-export const dynamic = 'force-dynamic'
+
 
 export default async function Heading({ headingText }) {
 
