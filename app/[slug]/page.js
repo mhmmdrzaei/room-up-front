@@ -10,17 +10,19 @@ import TextImageBox from '../components/TextImageBox';
 import HeadingText from '../components/HeadingText';
 import Layout from '../components/Layout';
 import HeadingImage from '../components/HeadingImage';
-
+import TextImageBoxDynamic from '../components/TextImageBoxDynamic';
 const componentMap = {
   heading: Heading,
   headingText: HeadingText,
+  headingImage: HeadingImage,
   bodyText: BodyText,
   logoContainer: LogoContainer,
   ctaButton: CTAButton,
   membersCarousel: MembersCarousel,
   gradientLine: GradientLine,
   textImageBox: TextImageBox,
-  headingImage: HeadingImage
+  textImageDyamic: TextImageBoxDynamic
+  
 };
 
 

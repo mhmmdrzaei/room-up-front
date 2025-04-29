@@ -66,9 +66,11 @@ $red: #831308;
     z-index: 10;
     
   }
+  
   .slick-next:before, .slick-prev:before {
     font-size: 40px;
     opacity: 1;
+    @extend h1
   }
   .slick-next {
     right: 2%;

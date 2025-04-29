@@ -32,6 +32,7 @@ export default {
           { type: 'membersCarousel' },
           { type: 'gradientLine' },
           { type: 'textImageBox' },
+          { type: 'textImageDyamic'},
           {
             type: 'headingImage'
           }

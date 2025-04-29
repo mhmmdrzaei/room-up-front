@@ -17,6 +17,7 @@ import gradientLine from './modules/gradientLine'
 import textImageBox from './modules/textImageBox'
 import seo from './seo'
 import headingImage from './modules/headingImage'
+import textImageDynamic from './modules/textImageDynamic'
 
 
 
@@ -36,6 +37,7 @@ export const schemaTypes = [
       logoContainer,
       ctaButton,
       membersCarousel,
+      textImageDynamic,
       gradientLine,
       textImageBox,
       seo,

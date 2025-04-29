@@ -43,6 +43,19 @@
     padding: 0 20px;
     margin: 25px auto;
     @extend .flex;
+    .imgBox {
+        img {
+            max-height: 600px;
+            width: auto;
+            margin: 0 auto;
+        }
+        .caption {
+            text-align: center;
+            margin-top: 5px;
+        }
+    }
+
+    justify-content: space-between;
     align-items: center;
         .container {
             padding: 0;
@@ -119,7 +132,7 @@
 .heading-Image {
     position: relative;
     @extend .container-blocks;
-    padding-bottom: 82dvh;
+    padding-bottom: 90dvh;
     .headingImgBG {
         position: absolute;
         left: -20px;
@@ -150,9 +163,21 @@
     img {
         width: 100%;
         position: absolute;
-        height: 80dvh;
+        height: 87dvh;
         left: 0;
         object-fit: cover;
        
     }
+}
+.logoContainer {
+    margin: 30px auto;
+    max-width: 800px;
+    @extend .flex;
+    justify-content: space-between;
+    
+    a {
+        margin: 20px 15px;
+        
+    }
+
 }

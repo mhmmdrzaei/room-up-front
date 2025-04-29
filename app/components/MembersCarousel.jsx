@@ -2,7 +2,8 @@ import { getRandomMembers } from "@/sanity/sanity.utils";
 import Image from "next/image";
 
 // Since this is an async component, the data will be fetched on each render (server-side)
-export default async function MembersCarousel() {
+export default async function MembersCarousel({title}) {
+
   const members = await getRandomMembers(); // Dynamically fetch members
 
   if (!members.length) {
@@ -12,7 +13,7 @@ export default async function MembersCarousel() {
   return (
     <div className="carousel-container container">
       <div className="membersBackground"></div>
-      <h1>Members</h1>
+      <h1>{title}</h1>
         {members.map((member) => (
           <div key={member.slug.current} className="member-card">
             {member.name && <h4>{member.name}</h4>}

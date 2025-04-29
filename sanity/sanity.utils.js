@@ -98,7 +98,9 @@ export async function pageBySlugQuery(slug) {
             buttonColor,
             buttonAlignment
           },
-          _type == "membersCarousel" => {},
+          _type == "membersCarousel" => {
+            title
+            },
           _type == "gradientLine" => {
             lineColor,
             align
@@ -126,7 +128,24 @@ export async function pageBySlugQuery(slug) {
             },
             textContent,
             alignment
-          }
+          },
+          _type == "textImageDyamic" => {
+             memberReference-> {
+              name,
+              location,
+              images[0] {
+                asset-> {
+                  url,
+                  metadata { dimensions }
+                },
+                alt,
+                caption
+              }
+            },
+            
+             textContent,
+            alignment
+          },
         )
       },
       seo {
