@@ -21,7 +21,7 @@ export default async function TextImageBoxDynamic({
         flexDirection: alignment === "textImage" ? "row" : "row-reverse",
       }}
     >
-      <div className="imgBox"style={{ flex: 1 }}>
+      <div className="imgBox">
         {randomMemberr?.images ? (
           <Image
             src={randomMemberr.images.asset.url}
@@ -43,7 +43,7 @@ export default async function TextImageBoxDynamic({
           <p className="caption">{randomMemberr?.name} | {randomMemberr?.location} </p>
       
       </div>
-      <div style={{ flex: 1, padding: "20px" }}>
+      <div className="textbox" style={{  padding: "20px" }}>
         <PortableText
           value={textContent.filter((item) => item._type === "block")}
         />

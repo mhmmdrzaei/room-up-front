@@ -44,6 +44,7 @@
     margin: 25px auto;
     @extend .flex;
     .imgBox {
+        width: 49%;
         img {
             max-height: 600px;
             width: auto;
@@ -54,12 +55,26 @@
             margin-top: 5px;
         }
     }
+    .textbox {
+        width: 49%;
+    }
 
     justify-content: space-between;
     align-items: center;
         .container {
             padding: 0;
         }
+}
+//gradient
+.gradientParent {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    margin: 25px auto;
+    // overflow: hidden;
+    div {
+        position: absolute;
+    }
 }
 .carousel-container {
     // margin: 3.25em auto 7.25em;
@@ -119,6 +134,7 @@
     padding: 10px 15px;
     .videoContainer {
         margin: 10px auto;
+        max-width: 800px;
         div {
             margin: 0 auto;
         }
@@ -147,7 +163,7 @@
         width: fit-content;
         margin-top: 5px;
         max-width: 400px;
-        margin-right: 10px;
+        margin-left: 5px;
         position: absolute;
         bottom: -10px;
     }
@@ -171,13 +187,44 @@
 }
 .logoContainer {
     margin: 30px auto;
-    max-width: 800px;
+    max-width: 900px;
     @extend .flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    img {
+        max-height: 100px;
+    }
     
     a {
         margin: 20px 15px;
         
+    }
+
+}
+@media (max-width: 768px) {
+    .body-text,.heading-level-text {
+        width: 100% !important;
+    }
+    .heading-Image {
+        padding-bottom: 72%;
+        img {
+            height: auto;
+        }
+    }
+    .carousel-container {
+        .member-card {
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid grey;
+            figure img {
+                max-height: 100%;
+            }
+        } 
+    } 
+    .text-image-box {
+        .imgBox, .textbox {
+            width:100%;
+        } 
     }
 
 }

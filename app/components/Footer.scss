@@ -15,13 +15,22 @@ footer {
     @extend .flex;
     justify-content: space-between;
     align-items: flex-end;
+    .footer-left{ 
+        width: 31%;
+    }
+    .footer-center{
+        width: 31%;
+    }
+    nav {
+        width: 31%;
+    }
 }
 nav {
    text-align: right; 
-   min-width: 300px;
+//    min-width: 300px;
 }
 .footer-center {
-    min-width: 300px;
+    // min-width: 300px;
     text-align: center
 }
 .social-links {
@@ -34,4 +43,30 @@ nav {
         max-width: 110px;
         margin: 0 auto;
     }
+}
+@media (max-width: 840px) {
+    .footer-container {
+
+    .footer-center {
+        order: 1;
+         width: 100%;
+    }
+    .footer-left {
+        order: 2;
+         width: 100%;
+        justify-content: center;
+        text-align: center;
+        .social-links {
+            justify-content: center;
+        }
+    }
+    nav {
+        order: 3;
+         width: 100%;
+         text-align: center;
+    }
+
+
+    }
+
 }

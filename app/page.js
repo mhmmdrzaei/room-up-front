@@ -8,7 +8,7 @@ import Page from './[slug]/page';
 export async function generateMetadata() {
   const settings = await getsettings();
   const page = await pageBySlugQuery('home');
-  const title = `${settings?.siteTitle || ''} | ${page?.title || ''}`;
+const title = `${settings?.siteTitle || ""} | ${page?.seo?.seoTitle ? `${page.seo.seoTitle}` : `${page?.title}`}`;
   const description = page?.seo?.seoDescription || settings?.siteDescription || '';
 
   const fallbackImage = settings?.seoImg?.asset?.url || '';

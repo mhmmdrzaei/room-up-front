@@ -10,6 +10,11 @@ export default {
         validation: (Rule) => Rule.required(),
       },
       {
+        name:"order",
+        title: "Order Override",
+        type: "number"
+      },
+      {
         name: "content",
         title: "Content",
         type: "array",

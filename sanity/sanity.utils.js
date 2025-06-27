@@ -21,6 +21,11 @@ export async function getsettings() {
       },
       alt
     },
+    seoImg {
+    asset-> {
+    url
+    }
+      },
     "footerLogo": 
     footerLogo {
       asset->{url}
@@ -317,22 +322,22 @@ export async function getStaff() {
 
 export async function getMemberArea() {
   return createClient(clientConfig).fetch(
-    groq`*[_type == "membersAreaPosts"]{
-  _id,
-  title,
-  content[]{
-    ...,
-    asset->{url}, // for images
-    _type == "video" => {
-      _type,
-      url
-    }
-  }
-}
-`
+    groq`*[_type == "membersAreaPosts"] 
+        | order(coalesce(order, title) asc) 
+        {
+          _id,
+          title,
+          order,
+          content[]{
+            ...,
+            asset->{url},
+            _type == "video" => {
+              _type,
+              url
+            }
+          }
+        }`
   )
-
-  
 }
 
 export async function getPassword() {

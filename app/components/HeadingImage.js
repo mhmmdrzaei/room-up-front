@@ -7,9 +7,12 @@ export default function HeadingImage({ imageHeading, headingText }) {
         
         <Image src={imageHeading?.asset?.url} alt={imageHeading?.alt || 'Image'} width={1800} height={1400}/>
         {imageHeading?.caption && <p>{imageHeading.caption}</p>}
+        {headingText && (
       <div className='headingText'>
        <h2>{headingText}</h2>
       </div>
+        )}
+
     </div>
   );
 }

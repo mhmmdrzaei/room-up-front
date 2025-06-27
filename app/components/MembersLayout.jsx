@@ -5,33 +5,34 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 export default function MembersLayout({ people }) {
-    const settings = {
-        infinite: true,
-        autoplay: false,
-        autoplaySpeed: 0, // Autoplay without delay between slides
-        speed: 500, // Set the speed of the slide transition (8000ms)
-        cssEase: 'linear', // Smooth and linear transition on desktop
-        arrows: true, // No arrows for desktop (optional)
-        dots: false, // No dots for desktop (optional)
-        slidesToShow: 1, // Show one image at a time on mobile
-        slidesToScroll: 1, // Scroll one image at a time
-        centerMode: true, // Enable centering for better slide effect
-        variableWidth: true,
-        responsive: [
-          {
-            breakpoint: 768, // Mobile breakpoint
-            settings: {
-            speed: 300,
-              autoplay: false, // Disable autoplay on mobile
-              cssEase: 'ease', // Disable linear transition, use default easing
-              slidesToShow: 1, // Show one image at a time on mobile
-              slidesToScroll: 1, // Scroll one image at a time on mobile
-              dots: true, // Show dots for navigation on mobile
-              arrows: true, // Optional: show arrows for manual sliding on mobile
-            },
-          },
-        ],
-      };
+const settings = {
+  infinite: true,
+  autoplay: false,
+  speed: 500,
+  cssEase: 'linear',
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  centerMode: true,      // desktop only
+  variableWidth: true,   // desktop only
+  arrows: true,
+  dots: false,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: true,
+        centerMode: false,      // ← turn off centering
+        variableWidth: false,   // ← force full-width slides
+        speed: 300,
+        cssEase: 'ease',
+      },
+    },
+  ],
+}
+
       
   return (
     <div className="members">
