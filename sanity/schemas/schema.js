@@ -18,6 +18,7 @@ import textImageBox from './modules/textImageBox'
 import seo from './seo'
 import headingImage from './modules/headingImage'
 import textImageDynamic from './modules/textImageDynamic'
+import googleForm from './modules/googleForm'
 
 
 
@@ -39,6 +40,7 @@ export const schemaTypes = [
       membersCarousel,
       textImageDynamic,
       gradientLine,
+      googleForm,
       textImageBox,
       seo,
       memberAreaPosts,

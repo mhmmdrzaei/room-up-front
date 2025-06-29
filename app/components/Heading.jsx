@@ -22,7 +22,8 @@ export default async function Heading({ headingText }) {
             src={randomMemberr.images.asset.url}
             alt={randomMemberr.images.alt || 'Room Up Front Member portfolio piece'}
             width={1000} 
-            height={900}
+            height={1000}
+  priority
           />
           :
           <Image

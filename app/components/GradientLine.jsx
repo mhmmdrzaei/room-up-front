@@ -4,7 +4,7 @@ import React from 'react';
 
 const GradientLine = ({align }) => {
   // Set the alignment styles
-  const alignStyles = align === 'right' ? { marginLeft: 'auto', marginRight: 0 } : {};
+  const alignStyles = align === 'right' ? {} : {};
 
   // Set the gradient color based on the selected lineColor
   const gradientColors = {
@@ -18,7 +18,7 @@ const GradientLine = ({align }) => {
   const gradientStyle = {
     background:`${align === 'right'? gradientColors.blackAlt: gradientColors.black } ` ,
     height: '4px',
-    width: 'calc(100vw)',
+    // width: 'calc(100vw)',
     // right: `${align === 'left'? '0': 'initial'}`,
     // left: `${align === 'right'? '0': 'initial'}`,
 

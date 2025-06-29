@@ -11,6 +11,7 @@ import HeadingText from '../components/HeadingText';
 import Layout from '../components/Layout';
 import HeadingImage from '../components/HeadingImage';
 import TextImageBoxDynamic from '../components/TextImageBoxDynamic';
+import GoogleFormEmbed from '../components/GoogleForm';
 const componentMap = {
   heading: Heading,
   headingText: HeadingText,
@@ -21,7 +22,8 @@ const componentMap = {
   membersCarousel: MembersCarousel,
   gradientLine: GradientLine,
   textImageBox: TextImageBox,
-  textImageDyamic: TextImageBoxDynamic
+  textImageDyamic: TextImageBoxDynamic,
+  googleForm: GoogleFormEmbed
   
 };
 

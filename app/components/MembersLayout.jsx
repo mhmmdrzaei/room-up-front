@@ -49,7 +49,7 @@ const settings = {
      
                     <Image
                     src={image.asset?.url || '/placeholder.jpg'}
-                    alt={image.alt || `${person.name} image`}
+                    alt={image.alt || `image by ${person.name} `}
                     width={900}
                     height={900}
                     className="carousel-image"

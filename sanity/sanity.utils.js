@@ -73,6 +73,12 @@ export async function pageBySlugQuery(slug) {
               }
             }
           },
+          _type == "googleForm" => {
+            url,
+            height,
+            
+            },
+
           _type == "headingText" => {
             headingLevel,
             width,

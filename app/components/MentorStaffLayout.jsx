@@ -11,9 +11,9 @@ export default function MentorsStaffLayout({ people, type }) {
           <h4>{person.name}</h4>
           <Image
             src={person.image?.asset?.url || "/placeholder.jpg"}
-            alt={person.image?.alt || `${type} image`}
-            width={500}
-            height={500}
+            alt={person.image?.alt || `${type} image for ${person.name}`}
+            width={600}
+            height={600}
           />
           <div className="staff-details">
             <h5 className="person-position">{person.position}</h5>

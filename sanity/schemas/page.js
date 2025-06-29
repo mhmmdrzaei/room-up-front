@@ -33,6 +33,7 @@ export default {
           { type: 'gradientLine' },
           { type: 'textImageBox' },
           { type: 'textImageDyamic'},
+          {type: 'googleForm'},
           {
             type: 'headingImage'
           }
